@@ -121,10 +121,3 @@ data "aws_iam_policy_document" "ebs_kms_policy_block" {
   }
 
 }
-locals {
-  ebs_kms_policy_json = jsonencode(data.aws_iam_policy_document.ebs_kms_policy_combined.json)
-}
-
-output "ebs_kms_policy" {
-  value = local.ebs_kms_policy_json
-}
